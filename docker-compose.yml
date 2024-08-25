@@ -1,0 +1,8 @@
+version: '3'
+services:
+  src:
+    container_name: src
+    build: .
+    restart: always
+    ports:
+      - "8080:8080"
