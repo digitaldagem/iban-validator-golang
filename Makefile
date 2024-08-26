@@ -10,11 +10,6 @@ up-local:
 down:
 	docker-compose down -v --remove-orphans
 
-	if [ -n "$(SRC_DOCKER_IMAGES)" ]; then docker rmi $(GITHUB_SRC_DOCKER_IMAGES); fi
-
-down-local:
-	docker-compose down -v --remove-orphans
-
 	if [ -n "$(SRC_DOCKER_IMAGES)" ]; then docker rmi $(SRC_DOCKER_IMAGES); fi
 
 test:
@@ -23,4 +18,4 @@ test:
 test-local:
 	go test ./test/iban_validator_test.go -v
 
-.PHONY: up up-local down down-local test test-local
+.PHONY: up up-local down test test-local
